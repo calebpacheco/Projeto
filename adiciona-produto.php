@@ -1,7 +1,7 @@
 <?php include("cabecalho.php");
 include("conectaphp.php");
 include ("banco-produto.php");
-require("class/Produto.php");
+require("classes/Produto.php");
 
 $produto = new Produto;
 
