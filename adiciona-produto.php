@@ -19,3 +19,4 @@ if(insereProduto($conexao,$produto)) { ?>
 }
 
 ?>
+<?php include("rodape.php"); ?>

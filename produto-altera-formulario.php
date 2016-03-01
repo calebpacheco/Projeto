@@ -1,22 +1,29 @@
-<?php include("cabecalho.php");
+<?php
+
+include("cabecalho.php");
 include("banco-produto.php");
 include("conectaphp.php");
-require("classes/Produto.php");
+
+
+$id = $_GET['id'];
+$produto = buscaProduto($conexao, $id);
 ?>
-    <h1>Formulário de produto</h1>
-    <form action="adiciona-produto.php" method="post">
+    <h1>Alterando Produto</h1>
+    <form action="altera-produto.php" method="post">
+        <input type="hidden" name="id" value="<?=$produto['id']?>" />
+
         <table class="table">
             <tr>
                 <td>Nome</td>
-                <td> <input class="form-control" type="text" name="nome"></td>
+                <td> <input class="form-control" type="text" name="nome" value="<?=$produto['nome']?>"></td>
             </tr>
             <tr>
                 <td>Preço</td>
-                <td><input  class="form-control" type="number" name="preco"></td>
+                <td><input  class="form-control" type="number" name="preco" value="<?=$produto['preco']?>"></td>
             </tr>
             <tr>
                 <td>Descrição</td>
-                <td><textarea class="form-control" name="descricao"></textarea></td>
+                <td><textarea class="form-control" name="descricao"><?=$produto['descricao']?></textarea></td>
             </tr>
             <tr>
                 <td>
