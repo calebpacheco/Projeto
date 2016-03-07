@@ -3,7 +3,7 @@
 include("cabecalho.php");
 include("banco-produto.php");
 include("conectaphp.php");
-
+require("classes/Produto.php");
 
 $id = $_GET['id'];
 $produto = buscaProduto($conexao, $id);
@@ -11,7 +11,6 @@ $produto = buscaProduto($conexao, $id);
     <h1>Alterando Produto</h1>
     <form action="altera-produto.php" method="post">
         <input type="hidden" name="id" value="<?=$produto['id']?>" />
-
         <table class="table">
             <tr>
                 <td>Nome</td>

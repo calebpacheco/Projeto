@@ -1,11 +1,12 @@
 <?php
   class Produto {
+    public $id;
     public $nome;
     public $preco;
     public $descricao;
 
   function transformarJson(){
-    return json_encode($this);
+     json_encode($this);
   }
 
 }

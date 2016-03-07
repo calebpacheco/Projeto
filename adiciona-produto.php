@@ -4,11 +4,10 @@ include ("banco-produto.php");
 require("classes/Produto.php");
 
 $produto = new Produto;
-
+$produto->transformarJson();
 $produto->nome = $_POST['nome'];
 $produto->preco = $_POST['preco'];
 $produto->descricao = $_POST['descricao'];
-
 if(insereProduto($conexao,$produto)) { ?>
     <p class="text-success">  Produto <?= $produto->nome; ?>, <?= $produto->preco; ?> adicionado com sucesso!</p>
     <?php } else {

@@ -21,7 +21,7 @@ function removeProduto($conexao,$id){
 }
 
 function alteraProduto($conexao,Produto $produto) {
-  $query = "update produtos set nome = '{$produto->nome}', preco = {$produto->preco}, descricao = '{$produto->descricao}' where id = '{$id}'";
+  $query = "update produtos set nome = '{$produto->nome}', preco = {$produto->preco}, descricao = '{$produto->descricao}' where id = '{$produto->id}'";
   return mysqli_query($conexao, $query);
 }
 

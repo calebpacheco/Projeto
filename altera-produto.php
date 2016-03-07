@@ -4,13 +4,11 @@ include ("banco-produto.php");
 require("classes/Produto.php");
 
 $produto = new Produto;
-
-$produto->$id = $_POST['id'];
-$produto->$nome= $_POST['nome'];
-$produto->$preco= $_POST['preco'];
-$produto->$descricao = $_POST['descricao'];
-
-if(alteraProduto($conexao, $produto)) { ?>
+$produto->id = $_POST['id'];
+$produto->nome = $_POST['nome'];
+$produto->preco = $_POST['preco'];
+$produto->descricao = $_POST['descricao'];
+if(alteraProduto($conexao,$produto)) { ?>
     <p class="text-success">  Produto <?=$produto->nome; ?>, <?=$produto->preco; ?> foi alterado!</p>
     <?php } else {
       $msg = mysqli_error($conexao);
